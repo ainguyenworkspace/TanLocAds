@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<%- include('../partials/head') %>
+</head>
+<body>
+<%- include('../partials/header') %>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Trang chủ</a> / Giới thiệu</div>
+    <h1>Giới thiệu về <%= company.brandName %></h1>
+    <p><%= company.legalName %> - Đối tác tin cậy trong lĩnh vực bảng hiệu quảng cáo tại An Giang.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container grid grid-2" style="align-items:center;">
+    <div>
+      <span class="section-eyebrow">Câu chuyện của chúng tôi</span>
+      <h2>Từ xưởng nhỏ đến đối tác tin cậy của hàng trăm khách hàng</h2>
+      <p><%= company.legalName %> được thành lập với mong muốn mang đến giải pháp bảng hiệu quảng cáo chất lượng, bền đẹp và giá cả hợp lý cho các hộ kinh doanh, doanh nghiệp, trường học và tổ chức tại An Giang.</p>
+      <p>Với đội ngũ thợ tay nghề cao, máy móc cắt CNC - Laser hiện đại và quy trình thi công chuyên nghiệp, chúng tôi cam kết mang đến sản phẩm đúng tiến độ, đúng thiết kế và bảo hành rõ ràng.</p>
+      <p>Phương châm hoạt động: <strong>"<%= company.slogan %>"</strong> - <%= company.tagline %>.</p>
+    </div>
+    <div class="hero-visual">
+      <img src="/images/portfolio/truong-mau-giao-bang-hieu.jpg" alt="Đội ngũ thi công của Tan Loc Advertising" />
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--color-cream);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Giá trị cốt lõi</span>
+      <h2>Vì sao khách hàng chọn chúng tôi</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="card-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Chất lượng đảm bảo</h3>
+        <p>Vật liệu chính hãng, quy trình thi công chuẩn kỹ thuật, kiểm tra kỹ trước khi bàn giao.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Làm nhanh, lấy gấp</h3>
+        <p>Đáp ứng các đơn hàng gấp cho sự kiện, khai trương với thời gian thi công tối ưu.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Đội ngũ tận tâm</h3>
+        <p>Tư vấn miễn phí, hỗ trợ lắp đặt tận nơi và bảo hành sau thi công rõ ràng, minh bạch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Sẵn sàng hợp tác cùng bạn</h2>
+      <p>Liên hệ để được tư vấn giải pháp bảng hiệu phù hợp nhất với nhu cầu của bạn.</p>
+      <div class="hero-ctas">
+        <a href="/lien-he" class="btn btn-gold">Liên hệ ngay</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+</body>
+</html>

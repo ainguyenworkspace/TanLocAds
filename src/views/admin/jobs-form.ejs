@@ -1,0 +1,30 @@
+<%- include('../partials/admin-layout-start') %>
+  <div class="admin-topbar">
+    <h1 style="font-size:1.5rem;">Thêm tin tuyển dụng</h1>
+  </div>
+  <div class="admin-card">
+    <form method="POST" action="/admin/tuyen-dung/moi">
+      <div class="form-group">
+        <label for="title">Vị trí tuyển dụng *</label>
+        <input class="form-control" type="text" id="title" name="title" required />
+      </div>
+      <div class="form-group">
+        <label for="type">Loại hình *</label>
+        <input class="form-control" type="text" id="type" name="type" required placeholder="Toàn thời gian / Bán thời gian" />
+      </div>
+      <div class="form-group">
+        <label for="location">Địa điểm *</label>
+        <input class="form-control" type="text" id="location" name="location" required />
+      </div>
+      <div class="form-group">
+        <label for="description">Mô tả công việc *</label>
+        <textarea class="form-control" id="description" name="description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="requirements">Yêu cầu (mỗi dòng một yêu cầu)</label>
+        <textarea class="form-control" id="requirements" name="requirements" placeholder="Có kinh nghiệm 1 năm&#10;Chăm chỉ, chịu khó"></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold">Đăng tin</button>
+    </form>
+  </div>
+<%- include('../partials/admin-layout-end') %>

@@ -1,0 +1,15 @@
+<%- include('../partials/admin-layout-start') %>
+  <div class="admin-topbar">
+    <h1 style="font-size:1.5rem;">Tổng quan</h1>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-card"><strong><%= counts.portfolio %></strong><span>Dự án</span></div>
+    <div class="stat-card"><strong><%= counts.blog %></strong><span>Bài viết blog</span></div>
+    <div class="stat-card"><strong><%= counts.jobs %></strong><span>Tin tuyển dụng</span></div>
+    <div class="stat-card"><strong><%= counts.services %></strong><span>Dịch vụ</span></div>
+  </div>
+  <div class="admin-card">
+    <h3>Bắt đầu nhanh</h3>
+    <p>Sử dụng menu bên trái để thêm dự án mới, viết bài blog, đăng tin tuyển dụng hoặc cập nhật thông tin công ty.</p>
+  </div>
+<%- include('../partials/admin-layout-end') %>

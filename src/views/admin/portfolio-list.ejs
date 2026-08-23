@@ -1,0 +1,29 @@
+<%- include('../partials/admin-layout-start') %>
+  <div class="admin-topbar">
+    <h1 style="font-size:1.5rem;">Quản lý dự án</h1>
+    <a href="/admin/du-an/moi" class="btn btn-gold btn-sm">+ Thêm dự án</a>
+  </div>
+  <div class="admin-card">
+    <table class="admin-table">
+      <thead><tr><th>Ảnh</th><th>Tiêu đề</th><th>Danh mục</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <% portfolio.forEach(function(p) { %>
+          <tr>
+            <td><img src="<%= p.image %>" alt="" style="width:60px;height:44px;object-fit:cover;border-radius:6px;" /></td>
+            <td><%= p.title %></td>
+            <td><%= p.category %></td>
+            <td class="admin-actions">
+              <a class="btn btn-outline btn-sm" href="/admin/du-an/<%= p.slug %>/sua">Sửa</a>
+              <form method="POST" action="/admin/du-an/<%= p.slug %>/xoa" onsubmit="return confirm('Xóa dự án này?');">
+                <button type="submit" class="btn btn-outline btn-sm">Xóa</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+        <% if (!portfolio.length) { %>
+          <tr><td colspan="4">Chưa có dự án nào.</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+<%- include('../partials/admin-layout-end') %>

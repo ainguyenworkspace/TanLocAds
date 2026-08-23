@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<%- include('../partials/head') %>
+</head>
+<body>
+<%- include('../partials/header') %>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Trang chủ</a> / Bảng giá</div>
+    <h1>Bảng giá tham khảo</h1>
+    <p>Giá thực tế có thể thay đổi tùy theo chất liệu, kích thước và độ phức tạp. Liên hệ để nhận báo giá chính xác nhất.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-3">
+      <% pricing.forEach(function(p, i) { %>
+        <div class="price-card <%= i === 1 ? 'featured' : '' %>">
+          <h3><%= p.name %></h3>
+          <div class="price-amount">Từ <%= p.priceFrom %>đ <span>/ <%= p.unit %></span></div>
+          <ul class="price-features">
+            <% p.features.forEach(function(f) { %>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><%= f %></span>
+              </li>
+            <% }) %>
+          </ul>
+          <a href="/lien-he" class="btn btn-primary btn-block">Nhận báo giá chi tiết</a>
+        </div>
+      <% }) %>
+    </div>
+    <p class="text-center" style="margin-top:28px; color:var(--color-muted); font-size:0.85rem;">*Bảng giá mang tính chất tham khảo, chưa bao gồm chi phí thiết kế riêng (nếu có) và vận chuyển xa.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--color-cream);">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Nhận báo giá chính xác trong 24h</h2>
+      <p>Gửi thông tin dự án, chúng tôi sẽ liên hệ tư vấn và báo giá miễn phí.</p>
+      <div class="hero-ctas">
+        <a href="/lien-he" class="btn btn-gold">Yêu cầu báo giá</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<%- include('../partials/head') %>
+</head>
+<body>
+<%- include('../partials/header') %>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Trang chủ</a> / Tuyển dụng</div>
+    <h1>Tuyển dụng</h1>
+    <p>Gia nhập đội ngũ <%= company.brandName %> - cùng xây dựng những công trình bảng hiệu chất lượng.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <% if (!jobs.length) { %>
+      <p class="text-center">Hiện tại chưa có vị trí tuyển dụng. Vui lòng quay lại sau.</p>
+    <% } %>
+    <div class="grid grid-2">
+      <% jobs.forEach(function(job) { %>
+        <div class="card">
+          <h3><%= job.title %></h3>
+          <p style="color:var(--color-gold); font-weight:600; font-size:0.85rem;"><%= job.type %> · <%= job.location %></p>
+          <p><%= job.description %></p>
+          <% if (job.requirements && job.requirements.length) { %>
+            <ul class="price-features">
+              <% job.requirements.forEach(function(r) { %>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><%= r %></span>
+                </li>
+              <% }) %>
+            </ul>
+          <% } %>
+          <a href="/lien-he" class="btn btn-gold btn-sm">Ứng tuyển ngay</a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<%- include('../partials/admin-layout-start') %>
+  <div class="admin-topbar">
+    <h1 style="font-size:1.5rem;">Quản lý blog</h1>
+    <a href="/admin/blog/moi" class="btn btn-gold btn-sm">+ Viết bài mới</a>
+  </div>
+  <div class="admin-card">
+    <table class="admin-table">
+      <thead><tr><th>Tiêu đề</th><th>Ngày đăng</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <% posts.forEach(function(p) { %>
+          <tr>
+            <td><%= p.title %></td>
+            <td><%= new Date(p.date).toLocaleDateString('vi-VN') %></td>
+            <td class="admin-actions">
+              <a class="btn btn-outline btn-sm" href="/admin/blog/<%= p.slug %>/sua">Sửa</a>
+              <form method="POST" action="/admin/blog/<%= p.slug %>/xoa" onsubmit="return confirm('Xóa bài viết này?');">
+                <button type="submit" class="btn btn-outline btn-sm">Xóa</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+        <% if (!posts.length) { %>
+          <tr><td colspan="3">Chưa có bài viết nào.</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+<%- include('../partials/admin-layout-end') %>

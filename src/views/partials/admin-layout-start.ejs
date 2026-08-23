@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title><%= title %> - Quản trị</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="admin-body">
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <div class="brand"><img src="/images/brand/logo.png" alt="Logo" style="height:36px;" /></div>
+    <nav>
+      <a href="/admin" class="<%= currentPath === '/admin' || currentPath === '/admin/' ? 'active' : '' %>">Tổng quan</a>
+      <a href="/admin/du-an" class="<%= currentPath.startsWith('/admin/du-an') ? 'active' : '' %>">Dự án</a>
+      <a href="/admin/blog" class="<%= currentPath.startsWith('/admin/blog') ? 'active' : '' %>">Blog</a>
+      <a href="/admin/tuyen-dung" class="<%= currentPath.startsWith('/admin/tuyen-dung') ? 'active' : '' %>">Tuyển dụng</a>
+      <a href="/admin/cai-dat" class="<%= currentPath.startsWith('/admin/cai-dat') ? 'active' : '' %>">Cài đặt</a>
+      <a href="/" target="_blank">Xem website ↗</a>
+      <form method="POST" action="/admin/logout" style="margin-top:16px;">
+        <button type="submit" class="btn btn-outline-light btn-sm btn-block">Đăng xuất</button>
+      </form>
+    </nav>
+  </aside>
+  <main class="admin-main">

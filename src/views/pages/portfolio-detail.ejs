@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<%- include('../partials/head') %>
+</head>
+<body>
+<%- include('../partials/header') %>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Trang chủ</a> / <a href="/du-an">Dự án</a> / <%= item.title %></div>
+    <h1><%= item.title %></h1>
+    <p><%= item.category %></p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="hero-visual" style="margin-bottom:32px;">
+      <img src="<%= item.image %>" alt="<%= item.title %>" />
+    </div>
+    <div style="max-width:720px;">
+      <h2>Mô tả dự án</h2>
+      <p><%= item.description %></p>
+    </div>
+    <div class="hero-ctas" style="margin-top:24px;">
+      <a href="/du-an" class="btn btn-outline">Xem dự án khác</a>
+      <a href="/lien-he" class="btn btn-gold">Đặt dự án tương tự</a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+</body>
+</html>

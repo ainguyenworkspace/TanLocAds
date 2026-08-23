@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<%- include('../partials/head') %>
+</head>
+<body>
+<%- include('../partials/header') %>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Trang chủ</a> / Dịch vụ</div>
+    <h1>Dịch vụ của chúng tôi</h1>
+    <p>Giải pháp trọn gói từ thiết kế, thi công đến bảo hành cho mọi loại bảng hiệu quảng cáo.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+      <% services.forEach(function(s, i) { %>
+        <div class="card">
+          <div class="card-icon"><%- include('../partials/service-icon', { icon: s.icon }) %></div>
+          <h3><%= s.title %></h3>
+          <p><%= s.description %></p>
+          <a href="/lien-he" class="btn btn-outline btn-sm" style="margin-top:14px;">Nhận báo giá</a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--color-cream);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Quy trình</span>
+      <h2>Làm việc minh bạch, đúng tiến độ</h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="card"><h3>1. Tư vấn</h3><p>Khảo sát nhu cầu và tư vấn giải pháp phù hợp, miễn phí.</p></div>
+      <div class="card"><h3>2. Thiết kế</h3><p>Lên bản vẽ thiết kế, duyệt mẫu trước khi thi công.</p></div>
+      <div class="card"><h3>3. Thi công</h3><p>Sản xuất và lắp đặt bởi đội ngũ thợ tay nghề cao.</p></div>
+      <div class="card"><h3>4. Bảo hành</h3><p>Bàn giao, hướng dẫn sử dụng và bảo hành rõ ràng.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Cần tư vấn dịch vụ phù hợp?</h2>
+      <p>Gọi ngay <strong><%= company.phone %></strong> để được hỗ trợ nhanh nhất.</p>
+      <div class="hero-ctas">
+        <a href="/lien-he" class="btn btn-gold">Liên hệ tư vấn</a>
+        <a href="/bang-gia" class="btn btn-outline-light">Xem bảng giá</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+</body>
+</html>

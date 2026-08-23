@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<%- include('../partials/head') %>
+</head>
+<body>
+<%- include('../partials/header') %>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Trang chủ</a> / Blog</div>
+    <h1>Blog & Kiến thức</h1>
+    <p>Kinh nghiệm và kiến thức hữu ích về bảng hiệu quảng cáo, in ấn.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-3">
+      <% posts.forEach(function(post) { %>
+        <a href="/blog/<%= post.slug %>" class="card">
+          <span class="portfolio-tag"><%= new Date(post.date).toLocaleDateString('vi-VN') %></span>
+          <h3><%= post.title %></h3>
+          <p><%= post.excerpt %></p>
+        </a>
+      <% }) %>
+      <% if (!posts.length) { %>
+        <p>Chưa có bài viết nào.</p>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+</body>
+</html>

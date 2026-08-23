@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<%- include('../partials/head') %>
+</head>
+<body>
+<%- include('../partials/header') %>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Trang chủ</a> / Dự án</div>
+    <h1>Dự án đã thực hiện</h1>
+    <p>Một số hình ảnh thực tế các công trình bảng hiệu, backdrop, in ấn đã hoàn thành.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-4">
+      <% portfolio.forEach(function(p) { %>
+        <a href="/du-an/<%= p.slug %>" class="portfolio-card">
+          <div class="portfolio-thumb"><img src="<%= p.image %>" alt="<%= p.title %>" loading="lazy" /></div>
+          <div class="portfolio-body">
+            <span class="portfolio-tag"><%= p.category %></span>
+            <h3><%= p.title %></h3>
+            <p><%= p.description %></p>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--color-cream);">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Bạn muốn có một dự án tương tự?</h2>
+      <p>Liên hệ với chúng tôi để được tư vấn thiết kế và báo giá miễn phí.</p>
+      <div class="hero-ctas">
+        <a href="/lien-he" class="btn btn-gold">Liên hệ ngay</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<%- include('../partials/admin-layout-start') %>
+  <div class="admin-topbar">
+    <h1 style="font-size:1.5rem;">Quản lý tuyển dụng</h1>
+    <a href="/admin/tuyen-dung/moi" class="btn btn-gold btn-sm">+ Thêm tin</a>
+  </div>
+  <div class="admin-card">
+    <table class="admin-table">
+      <thead><tr><th>Vị trí</th><th>Loại hình</th><th>Địa điểm</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <% jobs.forEach(function(j) { %>
+          <tr>
+            <td><%= j.title %></td>
+            <td><%= j.type %></td>
+            <td><%= j.location %></td>
+            <td class="admin-actions">
+              <form method="POST" action="/admin/tuyen-dung/<%= j.slug %>/xoa" onsubmit="return confirm('Xóa tin này?');">
+                <button type="submit" class="btn btn-outline btn-sm">Xóa</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+        <% if (!jobs.length) { %>
+          <tr><td colspan="4">Chưa có tin tuyển dụng nào.</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+<%- include('../partials/admin-layout-end') %>

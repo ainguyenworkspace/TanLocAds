@@ -1,0 +1,125 @@
+{
+  "company": {
+    "legalName": "CÔNG TY TNHH MTV QUẢNG CÁO TẤN LỘC",
+    "brandName": "TAN LOC ADVERTISING",
+    "phone": "0396.433.466",
+    "email": "tanlocha45@gmail.com",
+    "address": "Chợ Nhà Thờ Thị Đam, Bình Tây 1, Bình Thạnh Đông, An Giang",
+    "slogan": "Chất lượng - Uy tín - Bền rẻ",
+    "tagline": "Làm nhanh, lấy gấp",
+    "facebook": "",
+    "zalo": "0396433466",
+    "workingHours": "7:00 - 18:00, Thứ 2 - Chủ nhật"
+  },
+  "services": [
+    {
+      "slug": "bang-hieu-hop-den",
+      "title": "Bảng hiệu - Hộp đèn - Alu - Mica",
+      "description": "Thiết kế và thi công bảng hiệu quảng cáo, hộp đèn, biển alu, mica theo yêu cầu, bền đẹp, chống nắng mưa.",
+      "icon": "signage"
+    },
+    {
+      "slug": "bang-hieu-den-led",
+      "title": "Bảng hiệu đèn LED - Tranh thờ",
+      "description": "Thi công bảng hiệu đèn LED sáng nét, tranh thờ trang trọng, đúng phong thủy và thẩm mỹ.",
+      "icon": "led"
+    },
+    {
+      "slug": "cat-cnc-laser",
+      "title": "Cắt CNC - Laser - Chữ nổi",
+      "description": "Cắt CNC, laser chính xác cao, chữ nổi cao cấp, báo giá thợ tận nơi, thi công nhanh gọn.",
+      "icon": "cnc"
+    },
+    {
+      "slug": "in-ky-thuat-so",
+      "title": "In kỹ thuật số - In UV - In khổ lớn",
+      "description": "In kỹ thuật số, in UV trực tiếp, in khổ lớn cho banner, standee, backdrop sự kiện, hội nghị.",
+      "icon": "print"
+    }
+  ],
+  "pricing": [
+    {
+      "name": "Bảng hiệu Alu/Mica cơ bản",
+      "priceFrom": "500.000",
+      "unit": "m²",
+      "features": ["Chất liệu Alu hoặc Mica", "In UV trực tiếp", "Bảo hành 12 tháng", "Thi công 2-3 ngày"]
+    },
+    {
+      "name": "Bảng hiệu đèn LED",
+      "priceFrom": "1.200.000",
+      "unit": "m²",
+      "features": ["Khung sắt/inox chắc chắn", "Đèn LED tiết kiệm điện", "Chống nước IP65", "Bảo hành 18 tháng"]
+    },
+    {
+      "name": "In backdrop / banner sự kiện",
+      "priceFrom": "80.000",
+      "unit": "m²",
+      "features": ["In kỹ thuật số độ phân giải cao", "Giao trong ngày với đơn gấp", "Tư vấn thiết kế miễn phí", "Hỗ trợ lắp đặt tận nơi"]
+    }
+  ],
+  "portfolio": [
+    {
+      "slug": "bach-hoa-minh-minh",
+      "title": "Bảng hiệu Bách Hoá Minh Minh",
+      "category": "Bảng hiệu - Hộp đèn",
+      "image": "/images/portfolio/bach-hoa-minh-minh-1.jpg",
+      "description": "Thi công bảng hiệu hộp đèn lớn cho cửa hàng bách hóa tổng hợp, thiết kế nổi bật, thu hút khách hàng."
+    },
+    {
+      "slug": "backdrop-le-tong-ket",
+      "title": "Backdrop Lễ Tổng Kết Năm Học",
+      "category": "In khổ lớn - Backdrop",
+      "image": "/images/portfolio/le-tong-ket-backdrop.jpg",
+      "description": "In backdrop sự kiện lễ tổng kết năm học cho trường mẫu giáo, màu sắc tươi sáng, sinh động."
+    },
+    {
+      "slug": "backdrop-hoi-nghi",
+      "title": "Backdrop Hội Nghị Viên Chức",
+      "category": "In khổ lớn - Backdrop",
+      "image": "/images/portfolio/hoi-nghi-backdrop.jpg",
+      "description": "Thiết kế và in backdrop trang trọng cho hội nghị viên chức và người lao động."
+    },
+    {
+      "slug": "bang-hieu-truong-mau-giao",
+      "title": "Bảng hiệu Trường Mẫu Giáo Bình Thạnh Đông",
+      "category": "Bảng hiệu",
+      "image": "/images/portfolio/truong-mau-giao-bang-hieu.jpg",
+      "description": "Thi công bảng hiệu cổng trường mẫu giáo với thiết kế hoạt hình sinh động, thân thiện với trẻ nhỏ."
+    },
+    {
+      "slug": "khu-vui-choi-trang-tri",
+      "title": "Trang Trí Khu Vui Chơi Thiên Nhiên",
+      "category": "Trang trí - In khổ lớn",
+      "image": "/images/portfolio/khu-vui-choi-trang-tri.jpg",
+      "description": "Thiết kế và thi công trang trí khu vui chơi trẻ em với hình ảnh động vật ngộ nghĩnh."
+    }
+  ],
+  "blog": [
+    {
+      "slug": "cach-chon-bang-hieu-phu-hop",
+      "title": "Cách chọn bảng hiệu phù hợp cho cửa hàng",
+      "excerpt": "Những lưu ý quan trọng khi lựa chọn chất liệu, kích thước và màu sắc bảng hiệu để thu hút khách hàng hiệu quả nhất.",
+      "content": "Bảng hiệu là bộ mặt đầu tiên của cửa hàng. Khi lựa chọn bảng hiệu, bạn cần cân nhắc: vị trí lắp đặt, khoảng cách nhìn, ánh sáng khu vực, và phong cách thương hiệu. Tan Loc Advertising tư vấn miễn phí giúp bạn chọn giải pháp tối ưu nhất về chi phí và hiệu quả.",
+      "date": "2026-06-15",
+      "author": "Tan Loc Advertising"
+    },
+    {
+      "slug": "loi-ich-bang-hieu-den-led",
+      "title": "Lợi ích của bảng hiệu đèn LED so với đèn thường",
+      "excerpt": "Bảng hiệu đèn LED tiết kiệm điện, tuổi thọ cao và độ sáng vượt trội - lựa chọn hàng đầu cho kinh doanh hiện đại.",
+      "content": "Đèn LED tiêu thụ điện năng thấp hơn 60-80% so với đèn neon truyền thống, tuổi thọ lên đến 50.000 giờ, và cho ánh sáng đều, rõ nét ngay cả ban ngày. Đây là lý do ngày càng nhiều doanh nghiệp chuyển sang sử dụng bảng hiệu đèn LED.",
+      "date": "2026-07-02",
+      "author": "Tan Loc Advertising"
+    }
+  ],
+  "jobs": [
+    {
+      "slug": "tho-thi-cong-bang-hieu",
+      "title": "Thợ thi công bảng hiệu quảng cáo",
+      "type": "Toàn thời gian",
+      "location": "Bình Thạnh Đông, An Giang",
+      "description": "Cần tuyển thợ có kinh nghiệm thi công bảng hiệu, hộp đèn, alu, mica. Ưu tiên ứng viên biết hàn, cắt CNC.",
+      "requirements": ["Có kinh nghiệm thi công bảng hiệu tối thiểu 1 năm", "Chăm chỉ, chịu khó, có tinh thần trách nhiệm", "Biết sử dụng máy cắt CNC là lợi thế"]
+    }
+  ]
+}

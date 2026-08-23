@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<%- include('../partials/head') %>
+</head>
+<body>
+<%- include('../partials/header') %>
+
+<section class="hero">
+  <div class="container">
+    <div>
+      <span class="hero-eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Uy tín hơn 10 năm tại An Giang
+      </span>
+      <h1>Bảng hiệu quảng cáo <em>chất lượng - bền đẹp</em>, làm nhanh lấy gấp</h1>
+      <p class="lead"><%= company.legalName %> chuyên thi công bảng hiệu, hộp đèn, đèn LED, cắt CNC/laser, chữ nổi và in kỹ thuật số khổ lớn, phục vụ tận nơi tại An Giang và khu vực lân cận.</p>
+      <div class="hero-ctas">
+        <a href="/lien-he" class="btn btn-gold">Nhận báo giá miễn phí</a>
+        <a href="/du-an" class="btn btn-outline">Xem dự án đã làm</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>500+</strong><span>Bảng hiệu đã thi công</span></div>
+        <div class="hero-stat"><strong>24h</strong><span>Báo giá nhanh</span></div>
+        <div class="hero-stat"><strong>100%</strong><span>Bảo hành rõ ràng</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="/images/portfolio/bach-hoa-minh-minh-1.jpg" alt="Bảng hiệu do Tan Loc Advertising thi công" loading="eager" />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Dịch vụ</span>
+      <h2>Giải pháp quảng cáo trọn gói</h2>
+      <p>Từ thiết kế, thi công đến bảo hành - Tan Loc Advertising đồng hành cùng doanh nghiệp của bạn.</p>
+    </div>
+    <div class="grid grid-4">
+      <% services.forEach(function(s) { %>
+        <div class="card">
+          <div class="card-icon"><%- include('../partials/service-icon', { icon: s.icon }) %></div>
+          <h3><%= s.title %></h3>
+          <p><%= s.description %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--color-cream);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Dự án tiêu biểu</span>
+      <h2>Những công trình chúng tôi tự hào</h2>
+      <p>Một số hình ảnh thực tế từ các dự án đã thi công tại An Giang.</p>
+    </div>
+    <div class="grid grid-4">
+      <% portfolio.forEach(function(p) { %>
+        <a href="/du-an/<%= p.slug %>" class="portfolio-card">
+          <div class="portfolio-thumb"><img src="<%= p.image %>" alt="<%= p.title %>" loading="lazy" /></div>
+          <div class="portfolio-body">
+            <span class="portfolio-tag"><%= p.category %></span>
+            <h3><%= p.title %></h3>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+    <div class="text-center" style="margin-top:32px;">
+      <a href="/du-an" class="btn btn-outline">Xem tất cả dự án</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Cần báo giá bảng hiệu ngay hôm nay?</h2>
+      <p>Gọi hotline <strong><%= company.phone %></strong> hoặc gửi yêu cầu, chúng tôi phản hồi trong vòng 24 giờ.</p>
+      <div class="hero-ctas">
+        <a href="tel:<%= company.phone.replace(/\D/g, '') %>" class="btn btn-gold">Gọi ngay <%= company.phone %></a>
+        <a href="/lien-he" class="btn btn-outline-light">Gửi yêu cầu tư vấn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% if (blog && blog.length) { %>
+<section class="section" style="background:var(--color-cream);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Kiến thức</span>
+      <h2>Bài viết mới nhất</h2>
+    </div>
+    <div class="grid grid-3">
+      <% blog.forEach(function(post) { %>
+        <a href="/blog/<%= post.slug %>" class="card">
+          <span class="portfolio-tag"><%= new Date(post.date).toLocaleDateString('vi-VN') %></span>
+          <h3><%= post.title %></h3>
+          <p><%= post.excerpt %></p>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="brand">
+      <img src="/images/brand/logo.png" alt="<%= company.brandName %>" />
+    </a>
+
+    <nav class="nav-desktop" aria-label="Điều hướng chính">
+      <ul>
+        <li><a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Trang chủ</a></li>
+        <li><a href="/gioi-thieu" class="<%= currentPath === '/gioi-thieu' ? 'active' : '' %>">Giới thiệu</a></li>
+        <li><a href="/dich-vu" class="<%= currentPath === '/dich-vu' ? 'active' : '' %>">Dịch vụ</a></li>
+        <li><a href="/bang-gia" class="<%= currentPath === '/bang-gia' ? 'active' : '' %>">Bảng giá</a></li>
+        <li><a href="/du-an" class="<%= currentPath.startsWith('/du-an') ? 'active' : '' %>">Dự án</a></li>
+        <li><a href="/blog" class="<%= currentPath.startsWith('/blog') ? 'active' : '' %>">Blog</a></li>
+        <li><a href="/tuyen-dung" class="<%= currentPath === '/tuyen-dung' ? 'active' : '' %>">Tuyển dụng</a></li>
+        <li><a href="/lien-he" class="<%= currentPath === '/lien-he' ? 'active' : '' %>">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-phone" href="tel:<%= company.phone.replace(/\D/g, '') %>">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <%= company.phone %>
+      </a>
+      <a href="/lien-he" class="btn btn-gold btn-sm">Báo giá ngay</a>
+      <button class="nav-toggle" aria-label="Mở menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="nav-mobile" aria-label="Điều hướng di động">
+    <ul>
+      <li><a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Trang chủ</a></li>
+      <li><a href="/gioi-thieu" class="<%= currentPath === '/gioi-thieu' ? 'active' : '' %>">Giới thiệu</a></li>
+      <li><a href="/dich-vu" class="<%= currentPath === '/dich-vu' ? 'active' : '' %>">Dịch vụ</a></li>
+      <li><a href="/bang-gia" class="<%= currentPath === '/bang-gia' ? 'active' : '' %>">Bảng giá</a></li>
+      <li><a href="/du-an" class="<%= currentPath.startsWith('/du-an') ? 'active' : '' %>">Dự án</a></li>
+      <li><a href="/blog" class="<%= currentPath.startsWith('/blog') ? 'active' : '' %>">Blog</a></li>
+      <li><a href="/tuyen-dung" class="<%= currentPath === '/tuyen-dung' ? 'active' : '' %>">Tuyển dụng</a></li>
+      <li><a href="/lien-he" class="<%= currentPath === '/lien-he' ? 'active' : '' %>">Liên hệ</a></li>
+    </ul>
+  </nav>
+</header>

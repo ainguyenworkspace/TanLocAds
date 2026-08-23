@@ -1,0 +1,50 @@
+<%- include('../partials/admin-layout-start') %>
+  <div class="admin-topbar">
+    <h1 style="font-size:1.5rem;">Cài đặt thông tin công ty</h1>
+  </div>
+  <div class="admin-card">
+    <form method="POST" action="/admin/cai-dat">
+      <div class="form-group">
+        <label for="legalName">Tên pháp lý công ty *</label>
+        <input class="form-control" type="text" id="legalName" name="legalName" required value="<%= company.legalName %>" />
+      </div>
+      <div class="form-group">
+        <label for="brandName">Tên thương hiệu *</label>
+        <input class="form-control" type="text" id="brandName" name="brandName" required value="<%= company.brandName %>" />
+      </div>
+      <div class="form-group">
+        <label for="phone">Số điện thoại *</label>
+        <input class="form-control" type="text" id="phone" name="phone" required value="<%= company.phone %>" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input class="form-control" type="email" id="email" name="email" required value="<%= company.email %>" />
+      </div>
+      <div class="form-group">
+        <label for="address">Địa chỉ *</label>
+        <input class="form-control" type="text" id="address" name="address" required value="<%= company.address %>" />
+      </div>
+      <div class="form-group">
+        <label for="slogan">Slogan</label>
+        <input class="form-control" type="text" id="slogan" name="slogan" value="<%= company.slogan %>" />
+      </div>
+      <div class="form-group">
+        <label for="tagline">Tagline</label>
+        <input class="form-control" type="text" id="tagline" name="tagline" value="<%= company.tagline %>" />
+      </div>
+      <div class="form-group">
+        <label for="facebook">Facebook (URL)</label>
+        <input class="form-control" type="text" id="facebook" name="facebook" value="<%= company.facebook %>" />
+      </div>
+      <div class="form-group">
+        <label for="zalo">Số Zalo</label>
+        <input class="form-control" type="text" id="zalo" name="zalo" value="<%= company.zalo %>" />
+      </div>
+      <div class="form-group">
+        <label for="workingHours">Giờ làm việc</label>
+        <input class="form-control" type="text" id="workingHours" name="workingHours" value="<%= company.workingHours %>" />
+      </div>
+      <button type="submit" class="btn btn-gold">Lưu thay đổi</button>
+    </form>
+  </div>
+<%- include('../partials/admin-layout-end') %>

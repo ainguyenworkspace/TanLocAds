@@ -1,0 +1,27 @@
+<%- include('../partials/admin-layout-start') %>
+  <div class="admin-topbar">
+    <h1 style="font-size:1.5rem;"><%= item ? 'Sửa dự án' : 'Thêm dự án' %></h1>
+  </div>
+  <div class="admin-card">
+    <form method="POST" action="<%= item ? '/admin/du-an/' + item.slug + '/sua' : '/admin/du-an/moi' %>" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title">Tiêu đề dự án *</label>
+        <input class="form-control" type="text" id="title" name="title" required value="<%= item ? item.title : '' %>" />
+      </div>
+      <div class="form-group">
+        <label for="category">Danh mục *</label>
+        <input class="form-control" type="text" id="category" name="category" required value="<%= item ? item.category : '' %>" placeholder="VD: Bảng hiệu - Hộp đèn" />
+      </div>
+      <div class="form-group">
+        <label for="description">Mô tả *</label>
+        <textarea class="form-control" id="description" name="description" required><%= item ? item.description : '' %></textarea>
+      </div>
+      <div class="form-group">
+        <label for="image">Ảnh dự án <%= item ? '(để trống nếu giữ ảnh cũ)' : '*' %></label>
+        <input class="form-control" type="file" id="image" name="image" accept="image/*" <%= item ? '' : 'required' %> />
+        <% if (item) { %><img src="<%= item.image %>" alt="" style="margin-top:10px; width:160px; border-radius:8px;" /><% } %>
+      </div>
+      <button type="submit" class="btn btn-gold">Lưu dự án</button>
+    </form>
+  </div>
+<%- include('../partials/admin-layout-end') %>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<%- include('../partials/head') %>
+</head>
+<body>
+<%- include('../partials/header') %>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Trang chủ</a> / <a href="/blog">Blog</a> / <%= post.title %></div>
+    <h1><%= post.title %></h1>
+    <p><%= new Date(post.date).toLocaleDateString('vi-VN') %> · <%= post.author %></p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div style="max-width:720px;">
+      <p style="font-size:1.05rem; white-space: pre-line;"><%= post.content %></p>
+    </div>
+    <div class="hero-ctas" style="margin-top:24px;">
+      <a href="/blog" class="btn btn-outline">Xem bài viết khác</a>
+      <a href="/lien-he" class="btn btn-gold">Liên hệ tư vấn</a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+</body>
+</html>
