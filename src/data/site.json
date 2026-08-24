@@ -39,22 +39,69 @@
   ],
   "pricing": [
     {
+      "slug": "bang-hieu-alu-mica-co-ban",
       "name": "Bảng hiệu Alu/Mica cơ bản",
       "priceFrom": "500.000",
       "unit": "m²",
-      "features": ["Chất liệu Alu hoặc Mica", "In UV trực tiếp", "Bảo hành 12 tháng", "Thi công 2-3 ngày"]
+      "image": "/images/portfolio/truong-mau-giao-bang-hieu.jpg",
+      "features": [
+        "Chất liệu Alu hoặc Mica",
+        "In UV trực tiếp",
+        "Bảo hành 12 tháng",
+        "Thi công 2-3 ngày"
+      ]
     },
     {
+      "slug": "bang-hieu-den-led",
       "name": "Bảng hiệu đèn LED",
       "priceFrom": "1.200.000",
       "unit": "m²",
-      "features": ["Khung sắt/inox chắc chắn", "Đèn LED tiết kiệm điện", "Chống nước IP65", "Bảo hành 18 tháng"]
+      "image": "/images/portfolio/bach-hoa-minh-minh-1.jpg",
+      "features": [
+        "Khung sắt/inox chắc chắn",
+        "Đèn LED tiết kiệm điện",
+        "Chống nước IP65",
+        "Bảo hành 18 tháng"
+      ]
     },
     {
+      "slug": "in-backdrop-banner-su-kien",
       "name": "In backdrop / banner sự kiện",
       "priceFrom": "80.000",
       "unit": "m²",
-      "features": ["In kỹ thuật số độ phân giải cao", "Giao trong ngày với đơn gấp", "Tư vấn thiết kế miễn phí", "Hỗ trợ lắp đặt tận nơi"]
+      "image": "/images/portfolio/le-tong-ket-backdrop.jpg",
+      "features": [
+        "In kỹ thuật số độ phân giải cao",
+        "Giao trong ngày với đơn gấp",
+        "Tư vấn thiết kế miễn phí",
+        "Hỗ trợ lắp đặt tận nơi"
+      ]
+    },
+    {
+      "slug": "chu-noi-cat-cnc-laser",
+      "name": "Chữ nổi - Cắt CNC/Laser",
+      "priceFrom": "350.000",
+      "unit": "m²",
+      "image": "/images/portfolio/hoi-nghi-backdrop.jpg",
+      "features": [
+        "Cắt CNC/Laser chính xác cao",
+        "Chữ nổi mica, alu, inox",
+        "Báo giá thợ tận nơi",
+        "Thi công nhanh gọn"
+      ]
+    },
+    {
+      "slug": "tranh-tho-trang-tri",
+      "name": "Tranh thờ - Trang trí",
+      "priceFrom": "900.000",
+      "unit": "m²",
+      "image": "/images/portfolio/khu-vui-choi-trang-tri.jpg",
+      "features": [
+        "Thiết kế theo yêu cầu, đúng phong thủy",
+        "Chất liệu bền màu, chống ẩm",
+        "Hoàn thiện tỉ mỉ, trang trọng",
+        "Tư vấn miễn phí tại nhà"
+      ]
     }
   ],
   "portfolio": [
@@ -119,7 +166,11 @@
       "type": "Toàn thời gian",
       "location": "Bình Thạnh Đông, An Giang",
       "description": "Cần tuyển thợ có kinh nghiệm thi công bảng hiệu, hộp đèn, alu, mica. Ưu tiên ứng viên biết hàn, cắt CNC.",
-      "requirements": ["Có kinh nghiệm thi công bảng hiệu tối thiểu 1 năm", "Chăm chỉ, chịu khó, có tinh thần trách nhiệm", "Biết sử dụng máy cắt CNC là lợi thế"]
+      "requirements": [
+        "Có kinh nghiệm thi công bảng hiệu tối thiểu 1 năm",
+        "Chăm chỉ, chịu khó, có tinh thần trách nhiệm",
+        "Biết sử dụng máy cắt CNC là lợi thế"
+      ]
     }
   ]
 }

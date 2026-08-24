@@ -196,7 +196,60 @@ router.post('/tuyen-dung/:slug/xoa', (req, res) => {
   res.redirect('/admin/tuyen-dung');
 });
 
-// ---- Company info & pricing ----
+// ---- Pricing ----
+router.get('/bang-gia', (req, res) => {
+  const data = readData();
+  res.render('admin/pricing-list', { title: 'Quản lý bảng giá', pricing: data.pricing });
+});
+
+router.get('/bang-gia/moi', (req, res) => {
+  res.render('admin/pricing-form', { title: 'Thêm gói giá', item: null });
+});
+
+router.post('/bang-gia/moi', upload.single('image'), (req, res) => {
+  const data = readData();
+  const { name, priceFrom, unit, features } = req.body;
+  data.pricing.push({
+    slug: slugify(name),
+    name,
+    priceFrom,
+    unit: unit || 'm²',
+    image: req.file ? `/images/portfolio/${req.file.filename}` : '/images/portfolio/placeholder.jpg',
+    features: features ? features.split('\n').map((f) => f.trim()).filter(Boolean) : []
+  });
+  writeData(data);
+  res.redirect('/admin/bang-gia');
+});
+
+router.get('/bang-gia/:slug/sua', (req, res) => {
+  const data = readData();
+  const item = data.pricing.find((p) => p.slug === req.params.slug);
+  if (!item) return res.redirect('/admin/bang-gia');
+  res.render('admin/pricing-form', { title: 'Sửa gói giá', item });
+});
+
+router.post('/bang-gia/:slug/sua', upload.single('image'), (req, res) => {
+  const data = readData();
+  const item = data.pricing.find((p) => p.slug === req.params.slug);
+  if (item) {
+    item.name = req.body.name;
+    item.priceFrom = req.body.priceFrom;
+    item.unit = req.body.unit || 'm²';
+    item.features = req.body.features ? req.body.features.split('\n').map((f) => f.trim()).filter(Boolean) : [];
+    if (req.file) item.image = `/images/portfolio/${req.file.filename}`;
+    writeData(data);
+  }
+  res.redirect('/admin/bang-gia');
+});
+
+router.post('/bang-gia/:slug/xoa', (req, res) => {
+  const data = readData();
+  data.pricing = data.pricing.filter((p) => p.slug !== req.params.slug);
+  writeData(data);
+  res.redirect('/admin/bang-gia');
+});
+
+// ---- Company info ----
 router.get('/cai-dat', (req, res) => {
   const data = readData();
   res.render('admin/settings', { title: 'Cài đặt thông tin công ty', company: data.company, pricing: data.pricing });

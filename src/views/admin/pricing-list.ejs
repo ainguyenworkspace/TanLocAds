@@ -1,0 +1,30 @@
+<%- include('../partials/admin-layout-start') %>
+  <div class="admin-topbar">
+    <h1 style="font-size:1.5rem;">Quản lý bảng giá</h1>
+    <a href="/admin/bang-gia/moi" class="btn btn-gold btn-sm">+ Thêm gói giá</a>
+  </div>
+  <div class="admin-card">
+    <table class="admin-table">
+      <thead><tr><th>Ảnh</th><th>Tên gói</th><th>Giá từ</th><th>Đơn vị</th><th>Hành động</th></tr></thead>
+      <tbody>
+        <% pricing.forEach(function(p) { %>
+          <tr>
+            <td><img src="<%= p.image %>" alt="" style="width:60px;height:44px;object-fit:cover;border-radius:6px;" /></td>
+            <td><%= p.name %></td>
+            <td><%= p.priceFrom %>đ</td>
+            <td><%= p.unit %></td>
+            <td class="admin-actions">
+              <a class="btn btn-outline btn-sm" href="/admin/bang-gia/<%= p.slug %>/sua">Sửa</a>
+              <form method="POST" action="/admin/bang-gia/<%= p.slug %>/xoa" onsubmit="return confirm('Xóa gói giá này?');">
+                <button type="submit" class="btn btn-outline btn-sm">Xóa</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+        <% if (!pricing.length) { %>
+          <tr><td colspan="5">Chưa có gói giá nào.</td></tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+<%- include('../partials/admin-layout-end') %>

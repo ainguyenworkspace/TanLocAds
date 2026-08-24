@@ -14,11 +14,41 @@
   </div>
 </div>
 
+<section class="section-sm">
+  <div class="container">
+    <div class="admin-card" id="calc">
+      <h2 style="margin-bottom:6px;">Tính giá ước tính nhanh</h2>
+      <p style="color:var(--color-ink-soft); margin-bottom:20px;">Chọn dịch vụ và nhập diện tích để xem mức giá tham khảo. Đây là ước tính sơ bộ, chưa bao gồm chi phí thiết kế riêng và vận chuyển xa.</p>
+      <div class="grid grid-3" style="align-items:end; gap:16px;">
+        <div class="form-group" style="margin-bottom:0;">
+          <label for="calc-service">Dịch vụ</label>
+          <select class="form-control" id="calc-service">
+            <% pricing.forEach(function(p, i) { %>
+              <option value="<%= p.priceFrom.replace(/\./g, '') %>" data-unit="<%= p.unit %>"><%= p.name %></option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+          <label for="calc-area">Diện tích (m²)</label>
+          <input class="form-control" id="calc-area" type="number" min="0.1" step="0.1" placeholder="VD: 3" />
+        </div>
+        <button type="button" id="calc-btn" class="btn btn-gold">Tính giá</button>
+      </div>
+      <p id="calc-result" style="margin-top:16px; font-weight:700; font-size:1.1rem; display:none;"></p>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
     <div class="grid grid-3">
       <% pricing.forEach(function(p, i) { %>
         <div class="price-card <%= i === 1 ? 'featured' : '' %>">
+          <% if (p.image) { %>
+            <div class="portfolio-thumb" style="border-radius: var(--radius-sm); margin-bottom:16px;">
+              <img src="<%= p.image %>" alt="<%= p.name %>" loading="lazy" />
+            </div>
+          <% } %>
           <h3><%= p.name %></h3>
           <div class="price-amount">Từ <%= p.priceFrom %>đ <span>/ <%= p.unit %></span></div>
           <ul class="price-features">
@@ -48,6 +78,34 @@
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    var btn = document.getElementById('calc-btn');
+    var result = document.getElementById('calc-result');
+    var serviceSelect = document.getElementById('calc-service');
+    var areaInput = document.getElementById('calc-area');
+
+    btn.addEventListener('click', function () {
+      var price = parseFloat(serviceSelect.value);
+      var area = parseFloat(areaInput.value);
+      var unit = serviceSelect.options[serviceSelect.selectedIndex].dataset.unit;
+      var serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+
+      if (!area || area <= 0) {
+        result.style.display = 'block';
+        result.style.color = 'var(--color-danger)';
+        result.textContent = 'Vui lòng nhập diện tích hợp lệ.';
+        return;
+      }
+
+      var total = price * area;
+      result.style.display = 'block';
+      result.style.color = 'var(--color-ink)';
+      result.textContent = serviceName + ' (' + area + ' ' + unit + '): ước tính từ ' + total.toLocaleString('vi-VN') + 'đ';
+    });
+  })();
+</script>
 
 <%- include('../partials/footer') %>
 </body>

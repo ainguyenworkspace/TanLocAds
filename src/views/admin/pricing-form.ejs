@@ -1,0 +1,31 @@
+<%- include('../partials/admin-layout-start') %>
+  <div class="admin-topbar">
+    <h1 style="font-size:1.5rem;"><%= item ? 'Sửa gói giá' : 'Thêm gói giá' %></h1>
+  </div>
+  <div class="admin-card">
+    <form method="POST" action="<%= item ? '/admin/bang-gia/' + item.slug + '/sua' : '/admin/bang-gia/moi' %>" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="name">Tên gói giá *</label>
+        <input class="form-control" type="text" id="name" name="name" required value="<%= item ? item.name : '' %>" placeholder="VD: Bảng hiệu Alu/Mica cao cấp" />
+      </div>
+      <div class="form-group">
+        <label for="priceFrom">Giá từ (VNĐ) *</label>
+        <input class="form-control" type="text" id="priceFrom" name="priceFrom" required value="<%= item ? item.priceFrom : '' %>" placeholder="VD: 500.000" />
+      </div>
+      <div class="form-group">
+        <label for="unit">Đơn vị tính</label>
+        <input class="form-control" type="text" id="unit" name="unit" value="<%= item ? item.unit : 'm²' %>" placeholder="m²" />
+      </div>
+      <div class="form-group">
+        <label for="features">Đặc điểm nổi bật (mỗi dòng một mục)</label>
+        <textarea class="form-control" id="features" name="features" style="min-height:140px;" placeholder="Chất liệu cao cấp&#10;Bảo hành 12 tháng&#10;Thi công 2-3 ngày"><%= item && item.features ? item.features.join('\n') : '' %></textarea>
+      </div>
+      <div class="form-group">
+        <label for="image">Ảnh minh họa <%= item ? '(để trống nếu giữ ảnh cũ)' : '' %></label>
+        <input class="form-control" type="file" id="image" name="image" accept="image/*" />
+        <% if (item) { %><img src="<%= item.image %>" alt="" style="margin-top:10px; width:160px; border-radius:8px;" /><% } %>
+      </div>
+      <button type="submit" class="btn btn-gold">Lưu gói giá</button>
+    </form>
+  </div>
+<%- include('../partials/admin-layout-end') %>
