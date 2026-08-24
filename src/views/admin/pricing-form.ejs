@@ -9,8 +9,8 @@
         <input class="form-control" type="text" id="name" name="name" required value="<%= item ? item.name : '' %>" placeholder="VD: Bảng hiệu Alu/Mica cao cấp" />
       </div>
       <div class="form-group">
-        <label for="priceFrom">Giá từ (VNĐ) *</label>
-        <input class="form-control" type="text" id="priceFrom" name="priceFrom" required value="<%= item ? item.priceFrom : '' %>" placeholder="VD: 500.000" />
+        <label for="priceFrom">Giá từ (VNĐ)</label>
+        <input class="form-control" type="text" id="priceFrom" name="priceFrom" value="<%= item ? item.priceFrom : '' %>" placeholder="VD: 500.000 (để trống nếu không muốn hiển thị giá công khai)" />
       </div>
       <div class="form-group">
         <label for="unit">Đơn vị tính</label>

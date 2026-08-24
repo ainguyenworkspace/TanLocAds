@@ -35,8 +35,9 @@ app.use(
     saveUninitialized: false,
     cookie: {
       httpOnly: true,
-      secure: isProd,
-      maxAge: 1000 * 60 * 60 * 8
+      secure: 'auto',
+      sameSite: 'lax',
+      maxAge: 1000 * 60 * 60 * 24 * 30
     }
   })
 );

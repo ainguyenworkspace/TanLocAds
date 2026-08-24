@@ -11,7 +11,7 @@
           <tr>
             <td><img src="<%= p.image %>" alt="" style="width:60px;height:44px;object-fit:cover;border-radius:6px;" /></td>
             <td><%= p.name %></td>
-            <td><%= p.priceFrom %>đ</td>
+            <td><%= p.priceFrom ? p.priceFrom + 'đ' : 'Ẩn giá (Liên hệ)' %></td>
             <td><%= p.unit %></td>
             <td class="admin-actions">
               <a class="btn btn-outline btn-sm" href="/admin/bang-gia/<%= p.slug %>/sua">Sửa</a>
