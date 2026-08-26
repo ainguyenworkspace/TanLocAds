@@ -1,0 +1,6 @@
+{
+  "ignore": [
+    "src/data/site.json",
+    "src/public/images/**"
+  ]
+}

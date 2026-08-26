@@ -173,5 +173,24 @@
       ]
     }
   ],
-  "inquiries": []
+  "inquiries": [
+    {
+      "id": "1787725869748-806610",
+      "name": "Ungvien1",
+      "phone": "011223344",
+      "email": "ungvien@gmail.com",
+      "message": "Ứng tuyển việc làm",
+      "createdAt": "2026-08-26T06:31:09.749Z",
+      "status": "contacted"
+    },
+    {
+      "id": "1787724970829-387878",
+      "name": "Khách hàng 1",
+      "phone": "0123456789",
+      "email": "khanhangh@gmail.com",
+      "message": "Báo giá in decal 3x5m",
+      "createdAt": "2026-08-26T06:16:10.829Z",
+      "status": "new"
+    }
+  ]
 }
