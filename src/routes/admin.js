@@ -48,17 +48,49 @@ router.post('/logout', (req, res) => {
 
 router.use(requireAdmin);
 
+router.use((req, res, next) => {
+  const data = readData();
+  res.locals.sidebarInquiriesNew = (data.inquiries || []).filter((i) => i.status === 'new').length;
+  next();
+});
+
 router.get('/', (req, res) => {
   const data = readData();
+  const inquiries = data.inquiries || [];
   res.render('admin/dashboard', {
     title: 'Bảng điều khiển quản trị',
     counts: {
       portfolio: data.portfolio.length,
       blog: data.blog.length,
       jobs: data.jobs.length,
-      services: data.services.length
+      services: data.services.length,
+      inquiriesNew: inquiries.filter((i) => i.status === 'new').length
     }
   });
+});
+
+// ---- Yêu cầu tư vấn ----
+router.get('/yeu-cau', (req, res) => {
+  const data = readData();
+  const inquiries = [...(data.inquiries || [])].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  res.render('admin/inquiries-list', { title: 'Yêu cầu tư vấn', inquiries });
+});
+
+router.post('/yeu-cau/:id/da-lien-he', (req, res) => {
+  const data = readData();
+  const item = (data.inquiries || []).find((i) => i.id === req.params.id);
+  if (item) {
+    item.status = item.status === 'contacted' ? 'new' : 'contacted';
+    writeData(data);
+  }
+  res.redirect('/admin/yeu-cau');
+});
+
+router.post('/yeu-cau/:id/xoa', (req, res) => {
+  const data = readData();
+  data.inquiries = (data.inquiries || []).filter((i) => i.id !== req.params.id);
+  writeData(data);
+  res.redirect('/admin/yeu-cau');
 });
 
 // ---- Portfolio ----

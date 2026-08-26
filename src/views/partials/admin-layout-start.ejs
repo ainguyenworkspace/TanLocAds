@@ -12,6 +12,12 @@
     <div class="brand"><img src="/images/brand/logo.png" alt="Logo" style="height:36px;" /></div>
     <nav>
       <a href="/admin" class="<%= currentPath === '/admin' || currentPath === '/admin/' ? 'active' : '' %>">Tổng quan</a>
+      <a href="/admin/yeu-cau" class="<%= currentPath.startsWith('/admin/yeu-cau') ? 'active' : '' %>">
+        Yêu cầu tư vấn
+        <% if (typeof sidebarInquiriesNew !== 'undefined' && sidebarInquiriesNew > 0) { %>
+          <span style="display:inline-block; margin-left:6px; background:var(--color-gold); color:var(--color-white); font-size:0.72rem; font-weight:700; padding:1px 7px; border-radius:999px;"><%= sidebarInquiriesNew %></span>
+        <% } %>
+      </a>
       <a href="/admin/du-an" class="<%= currentPath.startsWith('/admin/du-an') ? 'active' : '' %>">Dự án</a>
       <a href="/admin/bang-gia" class="<%= currentPath.startsWith('/admin/bang-gia') ? 'active' : '' %>">Bảng giá</a>
       <a href="/admin/blog" class="<%= currentPath.startsWith('/admin/blog') ? 'active' : '' %>">Blog</a>

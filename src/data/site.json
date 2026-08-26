@@ -7,7 +7,7 @@
     "address": "Chợ Nhà Thờ Thị Đam, Bình Tây 1, Bình Thạnh Đông, An Giang",
     "slogan": "Chất lượng - Uy tín - Bền rẻ",
     "tagline": "Làm nhanh, lấy gấp",
-    "facebook": "",
+    "facebook": "https://www.facebook.com/share/1HCbsM33EF/",
     "zalo": "0396433466",
     "workingHours": "7:00 - 18:00, Thứ 2 - Chủ nhật"
   },
@@ -41,7 +41,7 @@
     {
       "slug": "bang-hieu-alu-mica-co-ban",
       "name": "Bảng hiệu Alu/Mica cơ bản",
-      "priceFrom": "300.000",
+      "priceFrom": "",
       "unit": "m²",
       "image": "/images/portfolio/1787590546110-682187.png",
       "features": [
@@ -172,5 +172,6 @@
         "Biết sử dụng máy cắt CNC là lợi thế"
       ]
     }
-  ]
+  ],
+  "inquiries": []
 }

@@ -1,8 +1,7 @@
 const express = require('express');
 const rateLimit = require('express-rate-limit');
 const router = express.Router();
-const { readData } = require('../data/store');
-const { sendContactEmail } = require('../utils/mailer');
+const { readData, writeData } = require('../data/store');
 
 const contactLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -117,7 +116,7 @@ router.get('/lien-he', (req, res) => {
   });
 });
 
-router.post('/lien-he', contactLimiter, async (req, res) => {
+router.post('/lien-he', contactLimiter, (req, res) => {
   const data = readData();
   const { name, phone, email, message, website } = req.body;
 
@@ -136,19 +135,19 @@ router.post('/lien-he', contactLimiter, async (req, res) => {
     });
   }
 
-  try {
-    await sendContactEmail({ name, phone, email, message });
-  } catch (err) {
-    console.error('[contact] gửi email thất bại:', err.message);
-    return res.status(500).render('pages/contact', {
-      title: `Liên hệ - ${data.company.brandName}`,
-      description: 'Liên hệ Tan Loc Advertising để được tư vấn và báo giá miễn phí.',
-      company: data.company,
-      sent: false,
-      error: 'Có lỗi khi gửi yêu cầu, vui lòng gọi trực tiếp hotline hoặc thử lại sau.',
-      old: { name, phone, email, message }
-    });
-  }
+  if (!Array.isArray(data.inquiries)) data.inquiries = [];
+  const inquiry = {
+    id: `${Date.now()}-${Math.round(Math.random() * 1e6)}`,
+    name,
+    phone,
+    email: email || '',
+    message,
+    createdAt: new Date().toISOString(),
+    status: 'new'
+  };
+
+  data.inquiries.unshift(inquiry);
+  writeData(data);
 
   res.render('pages/contact', {
     title: `Liên hệ - ${data.company.brandName}`,

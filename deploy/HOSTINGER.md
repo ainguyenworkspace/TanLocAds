@@ -52,9 +52,9 @@ sudo nano .env
 - `NODE_ENV=production`
 - `SESSION_SECRET=` (chuỗi ngẫu nhiên dài, ví dụ tạo bằng `openssl rand -hex 32`)
 - `ADMIN_USERNAME` / `ADMIN_PASSWORD` (mật khẩu mạnh)
-- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` — lấy từ hPanel Hostinger mục **Emails** sau khi tạo hộp thư theo domain (ví dụ `info@tanlocadv.com`)
-- `CONTACT_TO_EMAIL=tanlocha45@gmail.com`
 - `SITE_URL=https://tenmiencuaban.com`
+
+Yêu cầu tư vấn từ khách hàng được lưu trực tiếp vào `src/data/site.json` và xem tại trang quản trị `/admin/yeu-cau` — không cần cấu hình email/SMTP.
 
 ## 4. Chạy ứng dụng bằng PM2
 

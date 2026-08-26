@@ -1,0 +1,36 @@
+<%- include('../partials/admin-layout-start') %>
+  <div class="admin-topbar">
+    <h1 style="font-size:1.5rem;">Yêu cầu tư vấn</h1>
+  </div>
+  <div class="admin-card">
+    <% if (!inquiries.length) { %>
+      <p>Chưa có yêu cầu tư vấn nào từ khách hàng.</p>
+    <% } %>
+    <% inquiries.forEach(function(item) { %>
+      <div style="border:1px solid var(--color-border); border-radius:var(--radius-sm); padding:18px; margin-bottom:14px; <%= item.status === 'contacted' ? 'opacity:0.6;' : '' %>">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+          <div>
+            <strong style="font-size:1.05rem;"><%= item.name %></strong>
+            <span style="margin-left:10px; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:<%= item.status === 'contacted' ? 'var(--color-success)' : 'var(--color-gold)' %>;">
+              <%= item.status === 'contacted' ? 'Đã liên hệ' : 'Chưa liên hệ' %>
+            </span>
+          </div>
+          <span style="font-size:0.82rem; color:var(--color-muted);"><%= new Date(item.createdAt).toLocaleString('vi-VN') %></span>
+        </div>
+        <p style="margin:10px 0 6px; font-size:0.92rem;">
+          <a href="tel:<%= item.phone.replace(/\D/g, '') %>" style="color:var(--color-gold); font-weight:600;"><%= item.phone %></a>
+          <% if (item.email) { %> · <a href="mailto:<%= item.email %>" style="color:var(--color-gold);"><%= item.email %></a><% } %>
+        </p>
+        <p style="margin:0 0 14px; white-space:pre-line;"><%= item.message %></p>
+        <div class="admin-actions">
+          <form method="POST" action="/admin/yeu-cau/<%= item.id %>/da-lien-he">
+            <button type="submit" class="btn btn-outline btn-sm"><%= item.status === 'contacted' ? 'Đánh dấu chưa liên hệ' : 'Đánh dấu đã liên hệ' %></button>
+          </form>
+          <form method="POST" action="/admin/yeu-cau/<%= item.id %>/xoa" onsubmit="return confirm('Xóa yêu cầu này?');">
+            <button type="submit" class="btn btn-outline btn-sm">Xóa</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+<%- include('../partials/admin-layout-end') %>
